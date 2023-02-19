@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const adminRouter = require("./routes/admin");
 require('dotenv').config()
+const DB = process.env.MG_DB;
 // IMPORTS FROM OTHER FILES
 const authRouter = require("./routes/auth");
 const productRouter = require("./routes/product");
@@ -11,7 +12,7 @@ const userRouter = require("./routes/user");
 // INIT
 const PORT = process.env.PORT || 3000;
 const app = express();
-const DB = process.env.MG_DB;
+
   
 
 // middleware
