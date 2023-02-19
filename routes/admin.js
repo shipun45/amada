@@ -6,7 +6,7 @@ const Order = require("../models/order");
 const { PromiseProvider } = require("mongoose");
 
 // Add product
-adminRouter.post("/admin/add-product", admin, async (req, res) => {
+adminRouter.post("/admin/add-product",  async (req, res) => {
   try {
     const { name, description, images, quantity, price, category } = req.body;
     let product = new Product({
@@ -25,7 +25,7 @@ adminRouter.post("/admin/add-product", admin, async (req, res) => {
 });
 
 // Get all your products
-adminRouter.get("/admin/get-products", admin, async (req, res) => {
+adminRouter.get("/admin/get-products",  async (req, res) => {
   try {
     const products = await Product.find({});
     res.json(products);
